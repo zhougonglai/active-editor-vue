@@ -3,9 +3,12 @@ section.max-w-2xl.mx-auto.py-16.px-4(class="sm:py-24 sm:px-6 lg:max-w-7xl lg:px-
   .grid.grid-cols-1.gap-y-10.gap-x-6(
     class="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
   )
-    .group(v-for="activity in activity.list", :key="activity.id") {{ activity.title }}
+    .group(v-for="ac in activity.list", :key="ac.id") {{ ac.title }}
 </template>
 <script setup>
+useMeta({
+  title: "首页",
+});
 const route = useRoute();
 
 const activity = reactive({

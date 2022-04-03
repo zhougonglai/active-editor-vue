@@ -5,7 +5,8 @@ let nodeList = {};
 function createDocumentHandle(el, binding) {
   return function(e) {
     const target = e.target
-    if (el.contains(target)) {
+    // console.log(el, e.target, binding.arg);
+    if (el.contains(target) || binding.arg.contains(target)) {
       return false
     }
     if (binding.arg) {
